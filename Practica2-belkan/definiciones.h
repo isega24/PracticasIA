@@ -1,0 +1,33 @@
+#define agua 'A'
+#define arbol 'B'
+#define PK 'K'
+#define muro 'M'
+#define puerta 'D'
+#define desconocido '?'
+
+#define BIKINI '0'
+#define PIEDRA '1'
+#define LLAVE '2'
+#define ROSA '3'
+#define ORO '4'
+#define OSCAR '5'
+#define ZAPATILLAS '6'
+#define PALA '7'
+#define MANZANA '8'
+#define ALGORITMO '9'
+#define PRINCESA1 'g'
+#define PRINCESA2 'h'
+#define LEONARDO1 'i'
+#define LEONARDO2 'j'
+#define PRINCIPE1 'k'
+#define PRINCIPE2 'l'
+#define BRUJA1 'm'
+#define BRUJA2 'n'
+#define PROFE1 'o'
+#define PROFE2 'p'
+#define OSO 'q'
+
+#define NORTE 0
+#define ESTE 1
+#define SUR 2
+#define OESTE 3
