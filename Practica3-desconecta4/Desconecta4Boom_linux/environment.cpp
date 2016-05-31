@@ -748,7 +748,7 @@ void Environment::AplicarExplosion(int fila, int columna){
     if (jugador_activo_==2)
         adversario=1;
 
-    
+
     // for (int x=0; x<7; x++)
     //         if (maze_[fila][x]==adversario+3)
     //             explosion[adversario]=false;
@@ -765,7 +765,7 @@ void Environment::AplicarExplosion(int fila, int columna){
                 t++;
             }
             maze_[t][x]=0;
-            casillas_libres_--;
+            casillas_libres_++;
             tope_[x]--;
         }
     }
@@ -793,4 +793,3 @@ string Environment::ActionStr(ActionType action)
 	default: return "???";
 	}
 }
-
