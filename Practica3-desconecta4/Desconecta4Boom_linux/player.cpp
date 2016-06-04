@@ -42,9 +42,9 @@ double ValoracionTest(const Environment &estado, int jugador){
     int ganador = estado.RevisarTablero();
 
     if (ganador==jugador)
-       return 99999999.0; // Gana el jugador que pide la valoracion
+       return masinf; // Gana el jugador que pide la valoracion
     else if (ganador!=0)
-            return -99999999.0; // Pierde el jugador que pide la valoracion
+            return menosinf; // Pierde el jugador que pide la valoracion
     else if (estado.Get_Casillas_Libres()==0)
             return 0;  // Hay un empate global y se ha rellenado completamente el tablero
     else
@@ -327,10 +327,10 @@ double Poda_AlfaBeta(Environment &estado, int jugador, int profundidad, int max_
     int ganador = estado.RevisarTablero();
 
     if(ganador == jugador){
-        return masinf-100*profundidad;
+        return masinf-10*profundidad;
     }
     else if(ganador != 0){
-        return menosinf-100*profundidad;
+        return menosinf-10*profundidad;
     }
     else if(profundidad == max_profundidad){
         return Valoracion(estado,jugador);
@@ -443,11 +443,13 @@ Environment::ActionType Player::Think(){
     //if(jugador_==1){
       while(i < 8){
         if(Vb[i]){
-          puntActual = Poda_AlfaBeta(V[i],jugador_, 0, 6, menosinf, masinf);
+          puntActual = Poda_AlfaBeta(V[i],jugador_, 0, PROFUNDIDAD_ALFABETA, menosinf, masinf);
           cout << i << " puntuacion:"<<puntActual<<endl;
-          if(puntActual > best){
-            best = puntActual;
-            mejor = i;
+          if(puntActual >= best){
+            if(puntActual > best or i == 7){
+              best = puntActual;
+              mejor = i;
+            }
           }
         }
         i++;
